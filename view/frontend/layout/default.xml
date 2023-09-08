@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block name="magenable_popup" template="Magenable_Popup::popup.phtml"
+                   ifconfig="magenable_popup/general/enabled">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Magenable\Popup\ViewModel\Popup</argument>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="magenable.popup" xsi:type="array">
+                                <item name="component" xsi:type="string">Magenable_Popup/js/popup</item>
+                                <item name="children" xsi:type="array">
+                                    <item name="messages" xsi:type="array">
+                                        <item name="component" xsi:type="string">Magenable_Popup/js/messages</item>
+                                        <item name="template" xsi:type="string">Magenable_Popup/messages</item>
+                                        <item name="displayArea" xsi:type="string">popup</item>
+                                    </item>
+                                    <item name="content" xsi:type="array">
+                                        <item name="component" xsi:type="string">Magenable_Popup/js/content</item>
+                                        <item name="template" xsi:type="string">Magenable_Popup/content</item>
+                                        <item name="displayArea" xsi:type="string">popup</item>
+                                    </item>
+                                    <item name="newsletter-form" xsi:type="array">
+                                        <item name="component" xsi:type="string">Magenable_Popup/js/newsletter-form</item>
+                                        <item name="template" xsi:type="string">Magenable_Popup/newsletter-form</item>
+                                        <item name="displayArea" xsi:type="string">popup</item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+                <container name="form.additional.info">
+                    <block class="Magento\ReCaptchaUi\Block\ReCaptcha"
+                           name="magenable-popup-recaptcha"
+                           after="-"
+                           template="Magento_ReCaptchaFrontendUi::recaptcha.phtml"
+                           ifconfig="recaptcha_frontend/type_for/newsletter">
+                        <arguments>
+                            <argument name="recaptcha_for" xsi:type="string">newsletter</argument>
+                            <argument name="jsLayout" xsi:type="array">
+                                <item name="components" xsi:type="array">
+                                    <item name="recaptcha" xsi:type="array">
+                                        <item name="component" xsi:type="string">Magento_ReCaptchaFrontendUi/js/reCaptcha</item>
+                                    </item>
+                                </item>
+                            </argument>
+                        </arguments>
+                    </block>
+                </container>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

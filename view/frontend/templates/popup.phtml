@@ -1,0 +1,44 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Magento\Framework\Escaper $escaper */
+/** @var Magenable\Popup\ViewModel\Popup $viewModel */
+$viewModel = $block->getData('view_model');
+if (!$viewModel->isVisible()) {
+    return;
+}
+$popupCssClass = $viewModel->getPopupCssClass();
+$escaper = $viewModel->getEscaper();
+$popupContentId = 'magenable-popup-content';
+$formAdditionalInfoId = 'magenable-popup-form-additional-info';
+?>
+<div class="<?= /* @noEscape */ $popupCssClass ?>" data-bind="scope: 'magenable.popup', style: {display: 'none'}">
+    <div data-bind="text: '', afterRender: afterRenderPopup"></div>
+    <!-- ko foreach: getRegion('popup') -->
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <!--/ko-->
+    <div id="<?= /* @noEscape */ $popupContentId ?>"><?= /* @noEscape */ $viewModel->getPopupContentHtml() ?></div>
+    <?php if ($viewModel->isNewsletterEnabled()): ?>
+    <div id="<?= /* @noEscape */ $formAdditionalInfoId ?>"><?= $block->getChildHtml('form.additional.info') ?></div>
+    <?php endif; ?>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magenable_Popup/js/popup-config": {
+                "cssClass": "<?= $escaper->escapeJs($popupCssClass) ?>",
+                "modalCssClass": "<?= $escaper->escapeJs($viewModel->getModalCssClass()) ?>",
+                "title": "<?= $escaper->escapeJs($viewModel->getPopupTitle()) ?>",
+                "delay": "<?= $escaper->escapeJs($viewModel->getPopupDelay()) ?>",
+                "isNewsletterEnabled": <?= $escaper->escapeJs($viewModel->isNewsletterEnabled()) ?>,
+                "formActionUrl": "<?= $escaper->escapeJs($viewModel->getFormActionUrl()) ?>",
+                "buttonText": "<?= $escaper->escapeJs($viewModel->getButtonText()) ?>",
+                "popupMaxWidth": "<?= $escaper->escapeJs($viewModel->getPopupMaxWidth()) ?>",
+                "buttonTextColor": "<?= $escaper->escapeJs($viewModel->getButtonTextCollor()) ?>",
+                "buttonBackground": "<?= $escaper->escapeJs($viewModel->getButtonBackground()) ?>",
+                "popupContentId": "<?= /* @noEscape */ $popupContentId ?>",
+                "formAdditionalInfoId": "<?= /* @noEscape */ $formAdditionalInfoId ?>"
+            },
+            "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+        }
+    }
+</script>

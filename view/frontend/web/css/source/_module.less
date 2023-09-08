@@ -1,0 +1,36 @@
+& when (@media-common = true) {
+    .magenable-popup__form {
+        text-align: center;
+
+        [name="email"],
+        button.primary
+        {
+            width: 100%;
+            max-width: 300px;
+            margin-top: 10px;
+        }
+    }
+    .magenable-popup__additional {
+        margin-top: 10px;
+
+        .grecaptcha-badge,
+        .g-recaptcha > div
+        {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .modal-popup.magenable-popup-modal {
+        left: 0;
+        right: 0;
+        padding: 10px;
+
+        .modal-inner-wrap {
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

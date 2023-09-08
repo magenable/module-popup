@@ -1,0 +1,29 @@
+<!-- ko if: isNewsletterEnabled -->
+<form data-bind="css: cssClass,
+                 attr: {action: actionUrl},
+                 submit: handleSubmit,
+                 mageInit: {'validation': {}},
+                 afterRender: afterRenderForm" method="post">
+    <label>
+        <input name="email" type="email" data-bind="attr: {placeholder: $t('Enter your email address')}"
+               data-validate="{required:true, 'validate-email':true}" />
+    </label>
+    <input type="hidden" name="magenable_popup_newsletter" value="1" />
+    <input data-bind='attr: {value: getFormKey()}' type="hidden" name="form_key">
+    <div data-bind="css: cssClassActions">
+        <button class="action subscribe primary"
+                data-bind="
+                    attr: {title: buttonText},
+                    style: {
+                        color: buttonTextColor,
+                        'background-color': buttonBackground
+                    }
+                "
+                type="submit"
+                aria-label="Subscribe">
+            <span data-bind="text: buttonText"></span>
+        </button>
+    </div>
+    <div data-bind="css: cssClassAdditional, text: '', afterRender: afterRenderAdditionalData"></div>
+</form>
+<!-- /ko-->

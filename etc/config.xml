@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <magenable_popup>
+            <general>
+                <enabled>1</enabled>
+                <popup_title>Join Our Newsletter</popup_title>
+                <cms_block>magenable-popup</cms_block>
+                <popup_delay>5</popup_delay>
+                <button_text>Subscribe</button_text>
+            </general>
+            <visibility>
+                <type>exclude</type>
+                <pages>checkout/cart
+checkout</pages>
+            </visibility>
+            <newsletter>
+                <enabled>1</enabled>
+            </newsletter>
+            <design>
+                <popup_max_width>640</popup_max_width>
+                <button_text_color>#FFFFFF</button_text_color>
+                <button_background>#000000</button_background>
+            </design>
+        </magenable_popup>
+    </default>
+</config>

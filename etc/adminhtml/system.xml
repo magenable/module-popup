@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="magenable_popup" translate="label" type="text" sortOrder="100" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Popup</label>
+            <tab>magenable</tab>
+            <resource>Magenable_Popup::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="popup_title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Title</label>
+                </field>
+                <field id="cms_block" translate="label comment" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>CMS Block</label>
+                    <comment>CMS Block for popup content</comment>
+                    <source_model>Magento\Cms\Model\Config\Source\Block</source_model>
+                    <frontend_model>Magenable\Popup\Block\Adminhtml\Form\Renderer\Config\CmsBlock</frontend_model>
+                </field>
+                <field id="button_text" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Button Text</label>
+                </field>
+                <field id="popup_delay" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Popup Delay</label>
+                    <validate>validate-digits</validate>
+                    <comment>Delay in seconds</comment>
+                </field>
+            </group>
+            <group id="visibility" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Visibility</label>
+                <field id="type" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Visibility Type</label>
+                    <source_model>Magenable\Popup\Model\Config\Source\VisibilityType</source_model>
+                </field>
+                <field id="pages" translate="label comment" type="textarea" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Pages</label>
+                    <comment>One line for one page link without base url</comment>
+                </field>
+            </group>
+            <group id="newsletter" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Newsletter Subscription</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <label>Add Newsletter Subscription Form</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="design" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Design</label>
+                <field id="popup_max_width" translate="label comment" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Max Width of Popup</label>
+                    <validate>validate-digits</validate>
+                    <comment>Enter the maximum width of popup in pixels</comment>
+                </field>
+                <field id="button_text_color" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <validate>jscolor {hash:true,refine:false}</validate>
+                    <label>Button Text Color</label>
+                </field>
+                <field id="button_background" translate="label" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1" canRestore="1">
+                    <validate>jscolor {hash:true,refine:false}</validate>
+                    <label>Button Background</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

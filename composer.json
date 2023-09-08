@@ -1,0 +1,30 @@
+{
+    "name": "magenable/module-popup",
+    "description": "A Magento 2 popup module with newsletter feature",
+    "require": {
+        "magento/framework": ">=102.0",
+        "magenable/module-base": "*"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Magenable",
+            "homepage": "https://magenable.com.au"
+        }
+    ],
+    "keywords": [
+        "magento 2 popup newsletter",
+        "popup",
+        "newsletter"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magenable\\Popup\\": ""
+        }
+    }
+}
