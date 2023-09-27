@@ -39,6 +39,7 @@ class CreateCmsBlock implements DataPatchInterface
         $newCmsBlock->setIdentifier(Data::DEFAULT_CMS_BLOCK_ID);
         $newCmsBlock->setContent('<div style="text-align: center;">Enter your <b>email</b> in the field below</div>');
         $this->blockRepository->save($newCmsBlock);
+        return $this;
     }
 
     /**

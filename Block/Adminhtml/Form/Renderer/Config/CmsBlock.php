@@ -47,7 +47,7 @@ class CmsBlock extends Field
         foreach ($element->getData('values') as $item) {
             try {
                 $cmsBlockId = (int)$this->cmsBlockRepository->getById($item['value'])->getId();
-            } catch (NoSuchEntityException) {
+            } catch (NoSuchEntityException $e) {
                 continue;
             }
             $cmsBlockslinks[$item['value']] = $this->url->getUrl('cms/block/edit', ['block_id' => $cmsBlockId]);

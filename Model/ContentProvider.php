@@ -35,7 +35,7 @@ class ContentProvider
 
         try {
             $cmsBlock = $this->cmsBlockRepository->getById($cmsBlockId);
-        } catch (NoSuchEntityException) {
+        } catch (NoSuchEntityException $e) {
             return null;
         }
 
