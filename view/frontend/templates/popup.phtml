@@ -15,7 +15,7 @@ $formAdditionalInfoId = 'magenable-popup-form-additional-info';
     <div data-bind="text: '', afterRender: afterRenderPopup"></div>
     <!-- ko foreach: getRegion('popup') -->
     <!-- ko template: getTemplate() --><!-- /ko -->
-    <!--/ko-->
+    <!--/ko -->
     <div id="<?= /* @noEscape */ $popupContentId ?>"><?= /* @noEscape */ $viewModel->getPopupContentHtml() ?></div>
     <?php if ($viewModel->isNewsletterEnabled()): ?>
     <div id="<?= /* @noEscape */ $formAdditionalInfoId ?>"><?= $block->getChildHtml('form.additional.info') ?></div>
