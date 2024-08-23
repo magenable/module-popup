@@ -77,7 +77,7 @@ define([
                 });
             }
 
-            if (this.recaptchaWidgetId && window.grecaptcha) {
+            if (this.recaptchaWidgetId !== null && window.grecaptcha) {
                 grecaptcha.reset(this.recaptchaWidgetId);
                 this.$form.find('[name="g-recaptcha-response"], [name="token"]').val('');
                 this.$form.find('.required-captcha.checkbox').prop('checked', false);
