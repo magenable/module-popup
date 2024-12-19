@@ -63,7 +63,7 @@ Go to **Stores** > **Settings** > **Configuration** > **Magenable Extensions** >
 **Note:** _Magento Google Recaptha implementation has a bug that breaks a big rendering aroun Newsletter box. It affects alignment of Newsletter pop-up._
 
 #### Compatibility
-Tested with Magento Open Source 2.4.5-2.4.6, but will probably work with older Magento 2.X versions and Adobe Commerce
+Tested with Magento Open Source 2.4.4 - 2.4.7, but will probably work with older Magento 2.X versions and Adobe Commerce
 
 #### About developer
 The extension is developed by Magenable (https://magenable.com.au), eCommerce consultancy specializing in Magento/Adobe Commerce based in Melbourne, Australia
