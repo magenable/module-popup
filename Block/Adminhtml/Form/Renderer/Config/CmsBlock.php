@@ -23,9 +23,7 @@ class CmsBlock extends Field
     public function __construct(
         Context $context,
         array $data = [],
-        ?SecureHtmlRenderer $secureRenderer = null,
-        ?UrlInterface $url = null,
-        ?BlockRepositoryInterface $cmsBlockRepository = null
+        ?SecureHtmlRenderer $secureRenderer = null
     ) {
         parent::__construct($context, $data, $secureRenderer);
 
