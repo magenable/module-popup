@@ -16,10 +16,28 @@ use Magento\Framework\Exception\LocalizedException;
 
 class CmsBlock extends Field
 {
+    /**
+     * @var SecureHtmlRenderer|null
+     */
     private ?SecureHtmlRenderer $secureRenderer;
+
+    /**
+     * @var UrlInterface|null
+     */
     private ?UrlInterface $url;
+
+    /**
+     * @var BlockRepositoryInterface|null
+     */
     private ?BlockRepositoryInterface $cmsBlockRepository;
 
+    /**
+     * Initialize the CMS block configuration field renderer.
+     *
+     * @param Context $context
+     * @param array $data
+     * @param SecureHtmlRenderer|null $secureRenderer
+     */
     public function __construct(
         Context $context,
         array $data = [],
@@ -33,6 +51,8 @@ class CmsBlock extends Field
     }
 
     /**
+     * Render the field with a link to edit the selected CMS block.
+     *
      * @param AbstractElement $element
      * @return string
      * @throws LocalizedException
